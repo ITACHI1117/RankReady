@@ -26,3 +26,16 @@
     font-family: "Euclid-Circular-B-Light";
     src: url('/src/assets/fonts/Euclid Circular B Light.ttf') format('truetype');
 }
+
+.swiper-button-next {
+    background-color: #4caf50; /* Green background */
+    color: white; /* White icon */
+    display: flex;
+    padding: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  

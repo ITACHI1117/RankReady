@@ -3,7 +3,9 @@ import './App.css'
 import heroImage from "../src/assets/images/hero.png"
 import heroHeader from "../src/assets/images/heroHeader.png"
 import Testimonial from "../src/assets/images/testimonial.png"
+import PersGrid from "../src/assets/images/PersGrid.png"
 import RankedImg from "../src/assets/images/RankedImg.png"
+import Lines from "../src/assets/images/lines.png"
 import Send from "../src/assets/images/icons/send.png"
 import SendWhite from "../src/assets/images/icons/sendWhite.png"
 import NavigationBar from './components/NavigationBar'
@@ -15,6 +17,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { IoChevronBackOutline } from "react-icons/io5";
+import { IoChevronForward } from "react-icons/io5";
+import { PiHeadphonesFill } from "react-icons/pi";
+
+
+
+
 
 function App() {
 
@@ -139,7 +148,7 @@ function App() {
       </div>
     </section>
     {/* Testimonials */}
-    <section className='bg-gradient-to-r from-[#011A09] via-[#03220E] to-[#011A09] pt-12 w-full p-10 flex flex-col items-center'>
+    <section className='bg-gradient-to-r from-[#011A09] via-[#03220E] to-[#011A09] pt-12 w-full p-10 flex flex-col items-center relative'>
     <div className='max-w-7xl w-full flex flex-col items-center justify-center gap-2 mt-5'>
       <h1 className='text-4xl'>Testimonials and Reviews</h1>
       <h2 className='text-white'>Here's What Our Clients Are Saying</h2>
@@ -149,7 +158,7 @@ function App() {
       modules={[Navigation, A11y]}
       spaceBetween={10}
       slidesPerView={1}
-      navigation={{clickable:true}}
+      navigation={{clickable:true, prevEl:"#custom-prev", nextEl:"#custom-next"}}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
@@ -178,28 +187,37 @@ function App() {
       
       ...
     </Swiper>
-   
-    {/* <div className='flex flex-row w-[80%] h-[500px] gap-9 bg-[#e4e4e410] rounded-3xl overflow-hidden'>
-      <div className=' w-[50%] bg-black '>
-     <img src={Testimonial} alt="" className='w-full h-full object-cover' />
+    {/* Swiper buttons */}
+    <div className='w-[100%] max-w-[85rem] flex flex-row absolute justify-between pl-8 pr-8 z-20'>
+     {/* <div><p className='text-white'>arrow-left</p></div> 
+      */}
+      <span id='custom-prev' className='w-[30px] h-[30px] bg-[#C9FCBE] flex  items-center justify-center rounded-full'><IoChevronBackOutline className='text-[20px] rounded-full' /></span>
+      <span id='custom-next' className='w-[30px] h-[30px] bg-[#C9FCBE] flex  items-center justify-center rounded-full'><IoChevronForward className='text-[20px]' /></span>
+    </div>
       </div>
-     <div className='w-[50%] h-[100%] flex flex-col items-center justify-center'>
-      <article className='gap-5 flex flex-col'>
-        <p className='text-4xl text-[#FAAA4C]'>★★★★★</p>
-        <h2 className='text-white font-bold'>Exceptional SEO Services with Real Results</h2>
-        <p className='text-white w-[85%] font-[100] font-Euclid_Light'>Working with <span className='font-bold'>RankReady</span> has been a game-changer for our business. In just a few months, they helped us climb search engine rankings, fix technical website issues, and attract high-quality organic traffic. Their tailored strategy, clear communication, and data-driven approach made all the difference. We now rank on the first page for key search terms, leading to increased visibility and more leads. If you’re looking for an SEO partner that delivers measurable results, RankReady is the one to trust. Highly recommended!</p>
-      <div>
-      <h3 className='text-white font-bold'>Abiola Ayinke</h3>
-      <h4 className='text-white font-Euclid_Light'>MD, Chopa’lot</h4>
-      </div>
-      </article>
-     </div>
-    </div> */}
-      </div>
+
+      <img src={PersGrid} className='w-[100%] h-[300px] absolute bottom-0' alt="" />
      
     </div>
     </section>
+    {/* Contact a SEO Specialist */}
+    <section className='bg-white mt-3 w-full p-10 flex flex-col items-center font-Euclid relative mb-8'>
+    <div className='max-w-7xl w-full flex flex-col items-center justify-center gap-2'>
+      <h1 className='text-4xl text-[#274531] w-[60%] text-center leading-[55px] '>Make the First Step Toward Better Rankings and More Traffic.</h1>
+      <h2 className='text-[#274531] text-3xl'>Let’s create a custom SEO plan that grows your business.</h2>
+      <div className='w-[100%] flex flex-row gap-5 items-center justify-center pt-5'>
+        <button className='bg-[#011A09] p-2 pl-5 pr-5 rounded-2xl text-white'>Claim Your Free SEO Audit</button>
+        <button className='flex flex-row items-center p-2 pl-5 pr-5 rounded-2xl gap-1 border-[1px] border-black'><PiHeadphonesFill /> Speak with an SEO Specialist</button>
+      </div>
+      </div>
+      <div className='w-[100%] max-w-7xl relative'>
+      <img src={Lines} alt="" className='absolute left-0' />
+      </div>
     </section>
+    </section>
+    <footer className='bg-black h-36 flex flex-col justify-center items-center w-full'>
+
+    </footer>
 
    
     </>
