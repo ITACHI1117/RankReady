@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1 {
+      @apply text-5xl text-white font-Euclid;
+    }
+    h2 {
+        @apply font-Euclid;
+      }
+    p {
+        @apply  font-Euclid; /* Adjust to your preferred size and style */
+      }
+  }
+
+@font-face {
+    font-family: 'Euclid-Circular-B';
+    src:  url('/src/assets/fonts/Euclid Circular B Regular.ttf') format('truetype'),
+    url('/src/assets/fonts/Euclid Circular B Bold.ttf') format('truetype'),
+    url('/src/assets/fonts/Euclid Circular B Medium.ttf') format('truetype'),
+    url('/src/assets/fonts/Euclid Circular B SemiBold.ttf') format('truetype');
+
+    /* font-family: "Euclid-Circular-B-Light";
+    src: url('/src/assets/fonts/Euclid Circular B Light.ttf') format('truetype'); */
+}
