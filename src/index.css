@@ -20,7 +20,9 @@
     url('/src/assets/fonts/Euclid Circular B Bold.ttf') format('truetype'),
     url('/src/assets/fonts/Euclid Circular B Medium.ttf') format('truetype'),
     url('/src/assets/fonts/Euclid Circular B SemiBold.ttf') format('truetype');
-
-    /* font-family: "Euclid-Circular-B-Light";
-    src: url('/src/assets/fonts/Euclid Circular B Light.ttf') format('truetype'); */
+}
+    
+@font-face {
+    font-family: "Euclid-Circular-B-Light";
+    src: url('/src/assets/fonts/Euclid Circular B Light.ttf') format('truetype');
 }

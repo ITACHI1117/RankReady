@@ -13,7 +13,7 @@ function NavigationBar() {
   }
   return (
     <>
-     <nav className='z-10 flex flex-row w-full justify-between items-center '>
+     <nav className='z-10 flex flex-row w-full justify-between items-center font-Euclid '>
       <div>
         <img src={Logo} alt="" className='w-[150px]' />
       </div>
@@ -27,9 +27,9 @@ function NavigationBar() {
         })}
       </ul>
 
-      <div className='flex flex-row gap-3'> 
+      <div className='flex flex-row gap-3 font-Euclid'> 
         <button className='text-white'>Login</button>
-        <button className='bg-[#E3FFCC] p-2 pt-1 pb-1 rounded-xl'>Get Started</button>
+        <button className='bg-[#E3FFCC] p-2 pt-1 pb-1 rounded-xl '>Get Started</button>
       </div>
     </nav>
     </>

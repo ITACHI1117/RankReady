@@ -1,10 +1,10 @@
 import React from 'react'
-import Logo0 from "../src/assets/images/logos/Logo0.png"
-import Logo1 from "../src/assets/images/logos/Logo1.png"
-import Logo2 from "../src/assets/images/logos/Logo2.png"
-import Logo3 from "../src/assets/images/logos/Logo3.png"
-import Logo4 from "../src/assets/images/logos/Logo4.png"
-import Logo5 from "../src/assets/images/logos/Logo5.png"
+import Logo0 from "../../src/assets/images/logos/Logo0.png"
+import Logo1 from "../../src/assets/images/logos/Logo1.png"
+import Logo2 from "../../src/assets/images/logos/Logo2.png"
+import Logo3 from "../../src/assets/images/logos/Logo3.png"
+import Logo4 from "../../src/assets/images/logos/Logo4.png"
+import Logo5 from "../../src/assets/images/logos/Logo5.png"
 
 function LogosContainer() {
     
@@ -19,7 +19,13 @@ function LogosContainer() {
   ]
   return (
     <>
-    
+    {LogoImages.map(({id, logo, alt}) =>{
+        return(
+          <div key={id} className='bg-[#E3FFCC] p-3 pl-14 pr-14'>
+          <img src={logo} alt={alt} />
+        </div>
+        )
+       })}
     </>
   )
 }
