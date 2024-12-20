@@ -21,6 +21,8 @@ import 'swiper/css/scrollbar';
 import { IoChevronBackOutline } from "react-icons/io5";
 import { IoChevronForward } from "react-icons/io5";
 import { PiHeadphonesFill } from "react-icons/pi";
+import { motion } from "motion/react"
+
 
 
 function App() {
@@ -37,24 +39,24 @@ function App() {
     <NavigationBar />
     <div className='flex flex-col lg:flex lg:flex-row lg:items-center lg:justify-between w-full mt-14'>
     <article className='w-[100%]lg:w-[50%] flex flex-col gap-4 lg:gap-5' >
-      <h1 className='text-2xl lg:text-5xl font-bold'>Rank Higher on Google.</h1>
-      <h1 className='text-2xl lg:text-5xl font-bold'>Get more Traffic.</h1>
-      <h1 className='text-2xl lg:text-5xl font-bold'>Grow Your Business.</h1>
-      <p className='text-[#ffffffb7] w-[100%] lg:w-[60%]'>Our data driven SEO strategies have helped over 500 business dominate
+      <motion.h1 initial={{ y: 1000 }} animate={{ y: 0 }} transition={{ duration: 1.5,  type:"spring" }} className='text-2xl lg:text-5xl font-bold'>Rank Higher on Google.</motion.h1>
+      <motion.h1 initial={{ y: 1000 }} animate={{ y: 0 }} transition={{ duration: 1.5, delay:0.1,  type:"spring" }} className='text-2xl lg:text-5xl font-bold'>Get more Traffic.</motion.h1>
+      <motion.h1 initial={{ y: 1000 }} animate={{ y: 0 }} transition={{ duration: 1.5 ,delay:0.2, type:"spring" }} className='text-2xl lg:text-5xl font-bold'>Grow Your Business.</motion.h1>
+      <motion.p initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1, delay:0.5}} className='text-[#ffffffb7] w-[100%] lg:w-[60%]'>Our data driven SEO strategies have helped over 500 business dominate
         search results. Lets do the same for you.
-      </p>
-      <div className='gap-3 flex flex-col w-[100%] lg:flex-row items-center'>
-        <button className='w-[100%] lg:w-[40%] bg-[#E3FFCC]  pl-3 pr-3 pt-1 pb-1 rounded-2xl font-bold font-Euclid'>Claim Your Free SEO Audit</button>
-        <a href='#' className='underline text-white '>See How We Rank Websites</a>
+      </motion.p>
+      <div  className='gap-3 flex flex-col w-[100%] lg:flex-row items-center'>
+        <motion.button initial={{ x: -1000, y:200 }} animate={{ x: 0, y:0}} transition={{ duration: 1.2, delay:0.2,  type:"tween" }} className='w-[100%] lg:w-[40%] bg-[#E3FFCC]  pl-3 pr-3 pt-1 pb-1 rounded-2xl font-bold font-Euclid'>Claim Your Free SEO Audit</motion.button>
+        <motion.a initial={{ x: -1000 }} animate={{ x: 0 }} transition={{ duration: 1.2, delay:0.2,  type:"tween" }} href='#' className='underline text-white '>See How We Rank Websites</motion.a>
       </div>
     </article>
-    <div className='w-[50%] flex items-end justify-end'>
+    <motion.div initial={{ y: 1000 }} animate={{ y: 0 }} transition={{ duration: 1.5,  type:"spring" }} className='w-[50%] flex items-end justify-end'>
     <img src={heroHeader} alt="Seo Illustration" className='hidden lg:h-[25rem] lg:flex'/>
-    </div>
+    </motion.div>
     </div>
     {/* Trusted Partners */}
     <article className='mt-28 flex flex-wrap  items-center justify-center'>
-      <h2 className='text-white text-2xl font-bold'>Trusted Partners</h2>
+      <motion.h2 initial={{scale:0}} whileInView={{scale:1}}  transition={{ duration: 1,  type:"spring" }} className='text-white text-2xl font-bold'>Trusted Partners</motion.h2>
       <div className='grid grid-cols-3 lg:flex lg:flex-row gap-3 mt-10'>
        <LogosContainer />
       </div>
@@ -64,45 +66,45 @@ function App() {
     <section className='mt-28 w-full max-w-7xl p-5 lg:p-10 flex flex-col '>
       <div className='flex flex-col lg:flex-row gap-14 justify-between w-[100%] lg:mt-0 mt-10'>
         <img src={RankedImg} alt="" className='lg:w-[40%] w-[100%]' />  
-        <article className='flex flex-col h-full w-[100%] lg:w-[50%] justify-between'>
-          <div className='flex flex-col gap-2'>
+        <article  className='flex flex-col h-full w-[100%] lg:w-[50%] justify-between'>
+          <motion.div initial={{ y:200 }} whileInView={{ x: 0, y:0}} transition={{ duration: 1.2,  type:"spring" }} className='flex flex-col gap-2'>
           <h6 className='text-[#274531] text-lg'>Benefit</h6>
           <h2 className='text-4xl text-[#274531]'>Why Businesses Trust Us for SEO Success.</h2>
-          </div>
-          <div className='mt-12 flex flex-col gap-6 w-full lg:w-[575px]'>
+          </motion.div>
+          <motion.div initial={{ y:200 }} whileInView={{ x: 0, y:0}} transition={{ duration: 1.2,   type:"spring" }} className='mt-12 flex flex-col gap-6 w-full lg:w-[575px]'>
           <p className='text-2xl text-[#274531]'><span className='font-bold '>Customized Strategies: </span>Tailored SEO plans that fit your industry and goals.</p>
           <p className='text-2xl text-[#274531]'><span className='font-bold'>Proven Results: </span>Our clients see an average 200% increase in organic traffic within 6 months.</p>
           <p className='text-2xl text-[#274531]'><span className='font-bold'>Expert Team: </span>Certified SEO specialists with 10+ years of experience.</p>
-          </div>
+          </motion.div>
         </article>
       </div>
     </section>
     {/* SEO Audit form */}
     <section className='bg-gradient-to-r from-[#011A09] via-[#03220E] to-[#011A09] mt-28 w-full p-5 lg:p-10 flex flex-col items-center'>
       <div className='max-w-7xl w-full flex flex-col items-center justify-center gap-2'>
-      <h1 className=' text-3xl lg:text-4xl'>Free SEO Audit Form</h1>
-      <h2 className='text-[#ffffffc7] lg:3xl text-[12px] text-center'>Get a Feee SEO Audit - See What's Holding Your Website Back.</h2>
+      <motion.h1 initial={{ scale:0 }} whileInView={{ scale:1}} transition={{ duration: 1.2,  type:"spring" }} className=' text-3xl lg:text-4xl'>Free SEO Audit Form</motion.h1>
+      <motion.h2 initial={{ scale:0 }} whileInView={{ scale:1}} transition={{ duration: 1.2, delay:0.1,  type:"spring" }} className='text-[#ffffffc7] lg:3xl text-[12px] text-center'>Get a Feee SEO Audit - See What's Holding Your Website Back.</motion.h2>
       <form action="submit" className='flex flex-col gap-3 mt-6 w-[100%] items-center'>
-        <input type="text" className='h-14 w-full lg:w-[60%] rounded-2xl p-5 bg-[#5656564c] text-white outline-none placeholder-[#ffffffa1]' placeholder='Business Name' />
-        <input type="text" className='h-14 w-full lg:w-[60%] rounded-2xl p-5 bg-[#5656564c] text-white outline-none placeholder-[#ffffffa1]' placeholder='Website URL' />
-        <input type="text" className='h-14 w-full lg:w-[60%] rounded-2xl p-5 bg-[#5656564c] text-white outline-none placeholder-[#ffffffa1]' placeholder='Email Address' />
-        <input type="text" className='h-14 w-full lg:w-[60%] rounded-2xl p-5 bg-[#5656564c] text-white outline-none placeholder-[#ffffffa1]' placeholder='Current Traffic' />
-        <input type="text" className='h-14 w-full lg:w-[60%] rounded-2xl p-5 bg-[#5656564c] text-white outline-none placeholder-[#ffffffa1]' placeholder='SEO Goals (e.g “More Traffic”, “Better Ranking”)' />
-        <button onClick={(e) => handleFormSubmission(e)} className='bg-[#E3FFCC] w-full lg:w-[60%] h-14 rounded-2xl'><p className='text-bold font-bold'>Analyze My Site</p></button>
+        <motion.input initial={{ y:50 }} whileInView={{ y:0}} transition={{ duration: 1.2,  type:"spring" }} type="text" className='h-14 w-full lg:w-[60%] rounded-2xl p-5 bg-[#5656564c] text-white outline-none placeholder-[#ffffffa1]' placeholder='Business Name' />
+        <motion.input initial={{ y:50 }} whileInView={{ y:0}} transition={{ duration: 1.2,  type:"spring" }} type="text" className='h-14 w-full lg:w-[60%] rounded-2xl p-5 bg-[#5656564c] text-white outline-none placeholder-[#ffffffa1]' placeholder='Website URL' />
+        <motion.input initial={{ y:50 }} whileInView={{ y:0}} transition={{ duration: 1.2,  type:"spring" }} type="text" className='h-14 w-full lg:w-[60%] rounded-2xl p-5 bg-[#5656564c] text-white outline-none placeholder-[#ffffffa1]' placeholder='Email Address' />
+        <motion.input initial={{ y:50 }} whileInView={{ y:0}} transition={{ duration: 1.2,  type:"spring" }} type="text" className='h-14 w-full lg:w-[60%] rounded-2xl p-5 bg-[#5656564c] text-white outline-none placeholder-[#ffffffa1]' placeholder='Current Traffic' />
+        <motion.input initial={{ y:50 }}  whileInView={{ y:0}} transition={{ duration: 1.2,  type:"spring" }} type="text" className='h-14 w-full lg:w-[60%] rounded-2xl p-5 bg-[#5656564c] text-white outline-none placeholder-[#ffffffa1]' placeholder='SEO Goals (e.g “More Traffic”, “Better Ranking”)' />
+        <motion.button initial={{ scale:0 }} whileHover={{scale:1.1}} whileInView={{ scale:1}} transition={{ duration: 1.2, delay:0.1,  type:"spring" }} onClick={(e) => handleFormSubmission(e)} className='bg-[#E3FFCC] w-full lg:w-[60%] h-14 rounded-2xl'><p className='text-bold font-bold'>Analyze My Site</p></motion.button>
       </form>
       </div>
     </section>
     {/* Results and case studies */}
     <section className='bg-white mt-3 w-full p-5 lg:p-10 flex flex-col items-center font-Euclid'>
       <div className='max-w-7xl w-full flex flex-col items-center justify-center gap-2'>
-      <h1 className='text-2xl lg:text-4xl text-[#274531]'>Result and Case Studies</h1>
-      <h2 className='text-[#274531]'>Real Results for Real Businesses</h2>
+      <motion.h1 initial={{ scale:0 }} whileInView={{ scale:1}} transition={{ duration: 1.2,  type:"spring" }} className='text-2xl lg:text-4xl text-[#274531]'>Result and Case Studies</motion.h1>
+      <motion.h2 initial={{ scale:0 }} whileInView={{ scale:1}} transition={{ duration: 1.2,  type:"spring" }} className='text-[#274531]'>Real Results for Real Businesses</motion.h2>
       <div className='flex flex-col lg:flex-row gap-4'>
-        {results.map(({id,icon,title,result}) => {
+        {results.map(({id,icon,title,result,delay}) => {
           // returning on the first 3 items in the results array for the results section
           if (id <= 3){
             return (
-              <div key={id} className='bg-[#F0FFED] border-[#B5E6AC] border-[1px] p-7 rounded-xl w-80 h-64'>
+              <motion.div initial={{ x:-200 }} whileInView={{ x:0}} transition={{ duration: id,  type:"spring",  }} key={id} className='bg-[#F0FFED] border-[#B5E6AC] border-[1px] p-7 rounded-xl w-80 h-64'>
               <div className='flex flex-row justify-between'>
                <img src={icon} alt="" className='w-[20px] h-[20px]' />
                <img src={Send} alt="" className='w-[20px] h-[20px]' />
@@ -113,7 +115,7 @@ function App() {
                  return <li key={results} className='text-[#274531] text-[15px]'>{item}</li>
                })}
               </ul>
-              </div>
+              </motion.div>
                  )
           }
           
@@ -124,14 +126,14 @@ function App() {
     {/* Four Step process */}
     <section className='bg-gradient-to-r from-[#011A09] via-[#03220E] to-[#011A09]  mt-28 w-full p-5 lg:p-10 flex flex-col items-center'>
       <div className='max-w-7xl w-full flex flex-col items-center justify-center gap-2 mt-5'>
-      <h1 className=' text-3xl lg:text-4xl'>Our 4-Step SEO Process</h1>
-      <h2 className='text-white'>Simplified Process.</h2>
+      <motion.h1 initial={{ scale:0 }} whileInView={{ scale:1}} transition={{ duration: 1.2,  type:"spring" }} className=' text-3xl lg:text-4xl'>Our 4-Step SEO Process</motion.h1>
+      <motion.h2 initial={{ scale:0 }} whileInView={{ scale:1}} transition={{ duration: 1.2,  type:"spring" }} className='text-white'>Simplified Process.</motion.h2>
       <div>
       <div className='mt-6 flex flex-col lg:grid lg:grid-cols-2 gap-8'>
         {results.map(({id,icon,title,result}) => {
           if (id > 3){
             return (
-              <div key={id} className='bg-[#e4e4e410]  p-7 rounded-xl w-80 h-64'>
+              <motion.div initial={{ scale:0, opacity:0 }} whileInView={{ scale:1, opacity:1}} transition={{ duration: 1.8,  type:"spring" }} key={id} className='bg-[#e4e4e410]  p-7 rounded-xl w-80 h-64'>
               <div className='flex flex-row justify-between'>
                <img src={icon} alt="" className='w-[20px] h-[20px]' />
                <img src={SendWhite} alt="" className='w-[20px] h-[20px]' />
@@ -142,7 +144,7 @@ function App() {
                  return <li key={results} className='text-[white] text-[15px]'>{item}</li>
                })}
               </ul>
-              </div>
+              </motion.div>
                  )
           }
         })}
@@ -153,9 +155,9 @@ function App() {
     {/* Testimonials */}
     <section className='bg-gradient-to-r from-[#011A09] via-[#03220E] to-[#011A09] pt-12 w-full p-5 lg:p-10 flex flex-col items-center relative'>
     <div className='max-w-7xl w-full flex flex-col items-center justify-center gap-2 mt-5'>
-      <h1 className='text-2xl lg:text-4xl'>Testimonials and Reviews</h1>
-      <h2 className='text-white lg:text-xl text-sm'>Here's What Our Clients Are Saying</h2>
-      <div className='w-full lg:w-[90%] mt-10 lg:mt-20 flex flex-row justify-center items-center'>
+      <motion.h1  initial={{ y:100 }} whileInView={{ y:0}} transition={{ duration: 1.2,  type:"spring" }} className='text-2xl lg:text-4xl'>Testimonials and Reviews</motion.h1>
+      <motion.h2 initial={{ y:100 }} whileInView={{ y:0}} transition={{ duration: 1.2,  type:"spring" }} className='text-white lg:text-xl text-sm'>Here's What Our Clients Are Saying</motion.h2>
+      <motion.div  className='w-full lg:w-[90%] mt-10 lg:mt-20 flex flex-row justify-center items-center'>
       <Swiper
       // install Swiper modules
       modules={[Navigation, A11y]}
@@ -168,7 +170,7 @@ function App() {
       {results.map(({id}) =>{
         return(
       <SwiperSlide key={id}>
-        <div className='flex flex-col lg:flex-row w-[100%] lg:h-[500px] gap-3  lg:gap-9 bg-[#0F2616] rounded-3xl overflow-hidden'>
+        <motion.div initial={{ scale:0 }} whileInView={{ scale:1}} transition={{ duration: 1.8,  type:"spring" }} className='flex flex-col lg:flex-row w-[100%] lg:h-[500px] gap-3  lg:gap-9 bg-[#0F2616] rounded-3xl overflow-hidden'>
       <div className='lg:w-[50%] w-full h-[300px] lg:h-full bg-black '>
      <img src={Testimonial} alt="" className='lg:w-full lg:h-full w-full h-full object-cover' />
       </div>
@@ -183,7 +185,7 @@ function App() {
       </div>
       </article>
      </div>
-    </div>
+    </motion.div>
       </SwiperSlide>
         )
       })}
@@ -191,13 +193,13 @@ function App() {
       ...
     </Swiper>
     {/* Swiper buttons */}
-    <div className='hidden lg:flex w-[100%] max-w-[85rem] flex flex-row absolute justify-between pl-8 pr-8 z-20'>
+    <div  className='hidden lg:flex w-[100%] max-w-[85rem] flex flex-row absolute justify-between pl-8 pr-8 z-20'>
      {/* <div><p className='text-white'>arrow-left</p></div> 
       */}
-      <span id='custom-prev' className='w-[30px] h-[30px] bg-[#C9FCBE] flex  items-center justify-center rounded-full'><IoChevronBackOutline className='text-[20px] rounded-full' /></span>
-      <span id='custom-next' className='w-[30px] h-[30px] bg-[#C9FCBE] flex  items-center justify-center rounded-full'><IoChevronForward className='text-[20px]' /></span>
+      <motion.span initial={{ x:150 }} whileInView={{x:0}} transition={{ duration: 1.2,   type:"spring" }} id='custom-prev' className='w-[30px] h-[30px] bg-[#C9FCBE] flex  items-center justify-center rounded-full'><IoChevronBackOutline className='text-[20px] rounded-full' /></motion.span>
+      <motion.span  initial={{ x:-150 }} whileInView={{x:0}} transition={{ duration: 1.2,   type:"spring" }} id='custom-next' className='w-[30px] h-[30px] bg-[#C9FCBE] flex  items-center justify-center rounded-full'><IoChevronForward className='text-[20px]' /></motion.span>
     </div>
-      </div>
+      </motion.div>
       {/* Swiper buttons mobile */}
       <div className='lg:hidden w-[100%] max-w-[85rem] flex flex-row lg:absolute items-center justify-center gap-8 pl-8 pr-8 z-20'>
      {/* <div><p className='text-white'>arrow-left</p></div> 
@@ -212,14 +214,14 @@ function App() {
     </section>
     {/* Contact a SEO Specialist */}
     <section className='bg-white mt-3 w-full p-5 lg:p-10 flex flex-col items-center font-Euclid relative mb-8'>
-    <div className='max-w-7xl w-full flex flex-col items-center justify-center gap-2'>
+    <motion.div initial={{ scale:0 }} whileInView={{ scale:1}} transition={{ duration: 1.8,  type:"spring" }}  className='max-w-7xl w-full flex flex-col items-center justify-center gap-2'>
       <h1 className=' text-3xl lg:text-4xl text-[#274531]  w-full lg:w-[60%] text-center leading-[35px] lg:leading-[55px] '>Make the First Step Toward Better Rankings and More Traffic.</h1>
       <h2 className='text-[#274531] text-xl lg:text-3xl text-center'>Let’s create a custom SEO plan that grows your business.</h2>
       <div className='w-[100%] flex flex-col lg:flex-row gap-5 items-center justify-center pt-5'>
         <button className='bg-[#011A09] w-full lg:w-[300px] p-2 pl-5 pr-5 rounded-2xl text-white'>Claim Your Free SEO Audit</button>
         <button className='flex flex-row w-full lg:w-[300px] items-center justify-center p-2 pl-5 pr-5 rounded-2xl gap-1 border-[1px] border-black'><PiHeadphonesFill /> Speak with an SEO Specialist</button>
       </div>
-      </div>
+      </motion.div>
       <div className='w-[100%] max-w-7xl relative'>
       <img src={Lines} alt="" className='absolute left-0' />
       </div>
@@ -228,7 +230,7 @@ function App() {
 
     {/* Footer */}
     <footer className='bg-black  flex flex-col justify-center items-center w-full'>
-     <div className='max-w-7xl w-full flex flex-col items-center justify-center gap-2 p-5 lg:p-10'>
+     <motion.div initial={{ y:200 }} whileInView={{ y:0}} transition={{ duration: 1.8,  type:"spring" }}  className='max-w-7xl w-full flex flex-col items-center justify-center gap-2 p-5 lg:p-10'>
       <div className='mt-6 flex flex-col lg:grid lg:grid-cols-4 gap-8'>
       <img src={Logo} alt="" className='w-[150px]' />
       <article className='flex flex-col gap-1 lg:gap-3'>
@@ -263,11 +265,11 @@ function App() {
 
     
       </div>
-     </div>
-     <div className='w-full h-20'>
+     </motion.div>
+     <motion.div initial={{ y:10 }} whileInView={{ y:0}} transition={{ duration: 1.8,  type:"spring" }} className='w-full h-20'>
       <hr />
       <p className='text-[#ffffffaa] mt-5 w-full text-center'>© 2024, Rank Ready. All Right Reserved</p>
-     </div>
+     </motion.div>
     </footer>
 
    
