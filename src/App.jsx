@@ -34,10 +34,10 @@ function App() {
   return (
     <>
     <section className='flex flex-col justify-center items-center w-full'>
-    <img src={heroImage} alt="hero-image" className='absolute top-0 w-full h-[850px] -z-10'/>
-    <section className='p-5 lg:p-10 w-full max-w-7xl items-center flex flex-col'>
+    <img src={heroImage} alt="hero-image" className='absolute top-0 w-full h-[850px] z-10'/>
+    <section className='bg-gradient-to-r from-[#011A09] via-[#03220E] to-[#011A09] p-5 lg:p-10 w-full max-w-7xl items-center flex flex-col'>
     <NavigationBar />
-    <div className='flex flex-col lg:flex lg:flex-row lg:items-center lg:justify-between w-full mt-14'>
+    <div className='flex flex-col lg:flex lg:flex-row lg:items-center lg:justify-between w-full mt-14 z-20'>
     <article className='w-[100%]lg:w-[50%] flex flex-col gap-4 lg:gap-5' >
       <motion.h1 initial={{ y: 1000 }} animate={{ y: 0 }} transition={{ duration: 1.5,  type:"spring" }} className='text-2xl lg:text-5xl font-bold'>Rank Higher on Google.</motion.h1>
       <motion.h1 initial={{ y: 1000 }} animate={{ y: 0 }} transition={{ duration: 1.5, delay:0.1,  type:"spring" }} className='text-2xl lg:text-5xl font-bold'>Get more Traffic.</motion.h1>
@@ -55,7 +55,7 @@ function App() {
     </motion.div>
     </div>
     {/* Trusted Partners */}
-    <article className='mt-28 flex flex-wrap  items-center justify-center'>
+    <article className='mt-28 flex flex-wrap  items-center justify-center z-20'>
       <motion.h2 initial={{scale:0}} whileInView={{scale:1}}  transition={{ duration: 1,  type:"spring" }} className='text-white text-2xl font-bold'>Trusted Partners</motion.h2>
       <div className='grid grid-cols-3 lg:flex lg:flex-row gap-3 mt-10'>
        <LogosContainer />
