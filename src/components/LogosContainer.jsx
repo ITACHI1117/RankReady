@@ -21,7 +21,7 @@ function LogosContainer() {
     <>
     {LogoImages.map(({id, logo, alt}) =>{
         return(
-          <div key={id} className='bg-[#E3FFCC] p-3 pl-14 pr-14'>
+          <div key={id} className='items-center flex justify-center bg-[#E3FFCC] p-3 pl-10 pr-10 lg:pl-14 lg:pr-14'>
           <img src={logo} alt={alt} />
         </div>
         )

@@ -15,10 +15,10 @@ function NavigationBar() {
     <>
      <nav className='z-10 flex flex-row w-full justify-between items-center font-Euclid '>
       <div>
-        <img src={Logo} alt="" className='w-[150px]' />
+        <img src={Logo} alt="" className='w-[100px] lg:w-[150px]' />
       </div>
 
-      <ul className='flex flex-row gap-5'>
+      <ul className='hidden lg:flex flex-row gap-5'>
         {links.map(({content, id}) =>{
           const isActive = id === active
           return(
@@ -27,7 +27,7 @@ function NavigationBar() {
         })}
       </ul>
 
-      <div className='flex flex-row gap-3 font-Euclid'> 
+      <div className='hidden lg:flex flex-row gap-3 font-Euclid'> 
         <button className='text-white'>Login</button>
         <button className='bg-[#E3FFCC] p-2 pt-1 pb-1 rounded-xl '>Get Started</button>
       </div>
