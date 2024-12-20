@@ -9,6 +9,9 @@
     h2 {
         @apply font-Euclid;
       }
+      h5 {
+        @apply font-Euclid;
+      }
     p {
         @apply  font-Euclid; /* Adjust to your preferred size and style */
       }

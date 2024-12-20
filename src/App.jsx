@@ -10,6 +10,7 @@ import Send from "../src/assets/images/icons/send.png"
 import SendWhite from "../src/assets/images/icons/sendWhite.png"
 import NavigationBar from './components/NavigationBar'
 import LogosContainer from './components/LogosContainer'
+import Logo from "../src/assets/images/Logo.png"
 import results from './results'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -215,8 +216,41 @@ function App() {
       </div>
     </section>
     </section>
-    <footer className='bg-black h-36 flex flex-col justify-center items-center w-full'>
+    {/* Footer */}
+    <footer className='bg-black  flex flex-col justify-center items-center w-full'>
+     <div className='max-w-7xl w-full flex flex-col items-center justify-center gap-2 p-10'>
+      <div className='mt-6 grid grid-cols-4 -gap-8'>
+      <img src={Logo} alt="" className='w-[150px]' />
+      <article className='flex flex-col gap-3'>
+        <h5 className='text-white'>Quick link</h5>
+        <ul className='text-white font-Euclid_Light'>
+          <li><a href="">Home</a></li>
+          <li><a href="">Feature</a></li>
+          <li><a href="">Benefit</a></li>
+          <li><a href="">Cources</a></li>
+          <li><a href="">Contact Us</a></li>
+        </ul>
+        </article>
+        <article className='flex flex-col gap-3'>
+        <h5 className='text-white'>Company</h5>
+        <ul className='text-white'>
+          <li><a href="">Privacy Policy</a></li>
+          <li><a href="">Terms of Services</a></li>
+          <li><a href="">Legal</a></li>
+        </ul>
+        </article>
+        <div className='flex flex-col items-center gap-1'>
+        <h6 className='text-white text-center w-[80%]'>Be the first to get notification about our upcoming event</h6>
+        <form action="">
+          <div className='flex flex-row bg-white gap-3 p-2 rounded-lg relative w-full'>
+          <input type="text" placeholder='Email' className='outline-none placeholder:text-[#8A8A8A]' />
+          <button className='bg-[#C9FCBE] text-[#011A09] h-[100%] absolute -right-2 top-0 p-2 rounded-md font-Euclid_Light border border-white'>Submit</button>
+          </div>
+        </form>
+        </div>
 
+      </div>
+     </div>
     </footer>
 
    
