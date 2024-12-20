@@ -23,9 +23,6 @@ import { IoChevronForward } from "react-icons/io5";
 import { PiHeadphonesFill } from "react-icons/pi";
 
 
-
-
-
 function App() {
   // Submit form function
   function handleFormSubmission(e){
